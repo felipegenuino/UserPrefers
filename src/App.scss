@@ -139,7 +139,7 @@ main{
   .callToAction{ 
     color: var(--surface);
     background: var(--gradient); 
-    border: none;
+    border:  1px solid transparent;
     padding: 0.4375em 1.3125em;
     font-size: 0.9375rem;
     min-width: 4em;
@@ -152,6 +152,7 @@ main{
     letter-spacing: 0.02857em;
     text-transform: uppercase;
     cursor: pointer;
+    overflow: hidden;
     transition: all var(--transitionTime) linear;
     &:hover, &:focus{
       filter: brightness(0.85);
@@ -160,6 +161,22 @@ main{
     }
     &:active{
       filter: brightness(0.7)
+    }
+
+    & > .ripple {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+        background: #63a4ff;
+      display: block;
+      content: "";
+      border-radius: 9999px;
+      opacity: 1;
+      animation: 0.9s ease 1 forwards ripple-effect;
+    }
+    & > .content {
+      position: relative;
+      z-index: 2;
     }
   }
 
@@ -263,6 +280,7 @@ main{
  
   .ReactModal__Overlay {
     opacity: 0; 
+    z-index: 1000;
     transition: all var(--transitionTime) ease-in-out !important;
     background-color: var(--overlayer) !important; 
     @media (prefers-reduced-transparency: reduce) {
@@ -343,3 +361,22 @@ main{
       
     }
   }
+
+
+ 
+  
+  @keyframes ripple-effect {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(10);
+      opacity: 0.375;
+    }
+    100% {
+      transform: scale(35);
+      opacity: 0;
+    }
+  }
+ 
