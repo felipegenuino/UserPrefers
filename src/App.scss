@@ -1,6 +1,6 @@
  
 @media (prefers-reduced-motion: reduce) {
-  .tsParticles {
+  #tsparticles {
    display:none;
   }
   :root{
@@ -26,6 +26,7 @@
   --font-body: 'Roboto', sans-serif;
   --background:#dedede; 
   --gradient: linear-gradient( 135deg, #ffff80 0,#ff80bf 100%); 
+  --gradientButton: linear-gradient( 135deg, #005fb3 0,#018786 100%); 
   --surface:#ffffff;
   --error:#b00020;
   --primary:#6200ee;
@@ -48,6 +49,7 @@
   --font-body: 'Roboto', sans-serif;
   --background:#121212; 
   --gradient: linear-gradient( 135deg, #ffff80 0,#ff80bf 100%); 
+  --gradientButton: linear-gradient( 135deg, #ffff80 0,#ff80bf 100%); 
   --surface:#1e1e1e;
   --error:#cf6679;
   --primary:#bb86fc;
@@ -112,9 +114,7 @@ body{
   width: 80em;
   margin:0 auto; 
 }
-main{
-
-}
+ 
   .header{ 
     justify-content: center; 
     display: flex;
@@ -124,12 +124,22 @@ main{
   }
   .headerTitle{ 
     font-family: var(--font-decoration);
-    font-size: 7vw;
+    font-size: 12vw;
+    @media (min-width: 50em){
+      font-size: 7vw;
+    }
+    
   }
-  .headerTitle span{ }
+ 
 
   .headerSubTitle{
-    font-size: 2vw;
+    font-size: 5vw;
+    @media (min-width: 50em){
+      font-size: 3vw;
+    }
+    @media (min-width: 70em){
+      font-size: 2vw;
+    }
     padding: 0;
     margin: 0 0 1em 0;
     font-family: var(--font-title);
@@ -138,7 +148,7 @@ main{
 
   .callToAction{ 
     color: var(--surface);
-    background: var(--gradient); 
+    background: var(--gradientButton); 
     border:  1px solid transparent;
     padding: 0.4375em 1.3125em;
     font-size: 0.9375rem;
@@ -161,23 +171,7 @@ main{
     }
     &:active{
       filter: brightness(0.7)
-    }
-
-    & > .ripple {
-      width: 20px;
-      height: 20px;
-      position: absolute;
-        background: #63a4ff;
-      display: block;
-      content: "";
-      border-radius: 9999px;
-      opacity: 1;
-      animation: 0.9s ease 1 forwards ripple-effect;
-    }
-    & > .content {
-      position: relative;
-      z-index: 2;
-    }
+    } 
   }
 
   .cardList{
@@ -186,7 +180,15 @@ main{
     margin: 0 0 5em 0;
     padding: 0;
     list-style: none;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0 2.5em;
+    @media (min-width: 50em){
+      grid-template-columns: repeat(2, 1fr); 
+    }
+    @media (min-width: 70em){
+      grid-template-columns: repeat(3, 1fr); 
+      padding: 0 2.5em;
+    }
   }
   .cardListItem{}
 

@@ -1,6 +1,6 @@
 import React from 'react'; 
 import Modal from 'react-modal';
-import RippleButton from './RippleButton'
+
 const customStyles = {
     content: {
       top: '50%',
@@ -33,7 +33,7 @@ export default function App( ) {
   
     return (
       <div>
-        <RippleButton className="callToAction" onClick={openModal}>Thought for the Day</RippleButton>
+        <button className="callToAction" onClick={openModal}>Thought for the Day</button>
         <Modal 
           closeTimeoutMS={500}
           isOpen={modalIsOpen}
