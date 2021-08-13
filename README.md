@@ -7,23 +7,24 @@
     :root{
         --background:white; 
     }
- @media (prefers-color-scheme: dark){
-    :root{
-        --background:black; 
+    @media (prefers-color-scheme: dark){
+        :root{
+            --background:black; 
+        }
     }
- }
 ```
 
 ## Reduzindo animações no dispositivo e impactando na aplicação;
 ![Reduce motion](./src/images/motion.gif)
 
 ```SCSS
-@media (prefers-reduced-motion: reduce) {
-  #tsparticles {
-   display:none;
-  }
-  :root{
-    --transitionTime: 0s;
-  }
-}
+    :root{
+        --transitionTime: 0.2s;
+    }
+    @media (prefers-reduced-motion: reduce) {
+        #tsparticles { display:none; }
+        :root{
+            --transitionTime: 0s;
+        }
+    }
 ``` 
