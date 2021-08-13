@@ -15,7 +15,7 @@ export const Team = [
     {
         name: 'Rodrigo Ramos', 
         city: 'Rio Grande/RS',
-        skills: ['LOL Player', 'king of React', 'Lead Tecnical'],
+        skills: ['LOL Player', 'king of React', 'Robot'],
         image: {
             profile: 'https://media-exp1.licdn.com/dms/image/C4D03AQGuIYznYo7pGw/profile-displayphoto-shrink_800_800/0/1523918884892?e=1634169600&v=beta&t=NNqimIF6BWcNRJPw9aMy9-_cLt5X6vTZkBdu0XFrCus',
             social: 'https://instagram.ffln1-1.fna.fbcdn.net/v/t51.2885-15/e35/151295698_453819895810930_4029489171511369121_n.jpg?_nc_ht=instagram.ffln1-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=MDoU0ZL4_-AAX99HLDT&edm=AP_V10EBAAAA&ccb=7-4&oh=9d58b8ad5bd71b0c06d09b7cdde9c457&oe=61180340&_nc_sid=4f375e' 

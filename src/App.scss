@@ -8,18 +8,7 @@
   }
 }
 
-
-/*  
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-
+  
 :root{
   --font-decoration: 'Playfair Display', serif;
   --font-title: 'Raleway', sans-serif;
@@ -40,8 +29,8 @@
   --on-error:#ffffff;
   --transitionTime: 0.2s;
   --overlayer: rgba(18,18,18,0.95);
-  /* --background-hero:url(../src/components/hero/hero-light.jpg); */
 }
+
 @media (prefers-color-scheme: dark){
  :root{
   --font-decoration: 'Playfair Display', serif;
@@ -63,7 +52,6 @@
   --on-error:#000000;
   --transitionTime: 0.2s;
   --overlayer: rgba(18,18,18,0.95);
-  /* --background-hero:url(../src/components/hero/hero-dark.jpg); */
  }
 }
 
@@ -83,7 +71,8 @@ body{
   background-color: var(--background);
   color: var( --on-background);
 }
-*, *:before, *:after{
+ 
+*, ::after, ::before {
   box-sizing: border-box;
 }
 
@@ -101,11 +90,9 @@ body{
       overflow: hidden !important;
 } 
 
-.app{
-  
+.app{ 
   background: linear-gradient(to top, transparent 5%, var(--background) 75%);  
-  height:100vh;
-  
+  height:100vh; 
   display: flex;
   flex-direction: column; 
 }
@@ -258,17 +245,24 @@ body{
         font-family: var(--font-title);
         font-weight:600;
         display: flex;
+        flex-direction: column;
         padding: 0; 
+        @media (min-width: 50em){
+          flex-direction: row;
+        }
         .skill{  
-          margin: 0;
+          margin: 0 0 0.5em 0;
           transition: all var(--transitionTime) linear;
           // border: 0.0625em solid var(--primary);
           color: var(--on-surface);
           background-color: var( --background);
           padding: 0.5em 1em;
           border-radius: 0.3125em;
-          font-size: 0.8em;
-          & + .skill { margin-left: 0.5em}
+          font-size: 0.8em; 
+          @media (min-width: 50em){
+            margin: 0 0 0 0;
+            & + .skill { margin-left: 0.5em}
+          }
           &:hover{
             color: var(--primary)
           }
@@ -303,27 +297,30 @@ body{
      }
   }
   .ReactModal__Content{
+    max-width: 100%;
     background:var(--surface) !important;
     border: 0 !important;
     display: flex;
     flex-direction: column; 
     box-shadow: rgba(0, 0, 0, 0.219608) 0px 16px 28px 0px, rgba(0, 0, 0, 0.207843) 0px 25px 55px 0px;
     transition: all var(--transitionTime) ease-in-out !important;
- 
-
-
-
     h2{
       font-family: var(--font-decoration);
       font-weight: 100; 
       margin: 0.5em 0;
       padding: 0;
-      font-size: 3em;
+      font-size: 1.5em;
+        @media (min-width: 30em){
+          font-size: 3em; 
+        }
       text-align: center;
-    }
+    }   
 
     figure{
-      img{ max-width: 32em;}
+      img{    
+        max-width: 100%;
+        width: 32em;
+      }
       figcaption{
          color: var(--on-surface); 
          opacity: 0.6;
