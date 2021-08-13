@@ -28,3 +28,10 @@
         }
     }
 ``` 
+
+### Testado nos dispositivos
+- Windows: Chrome, Firefox e Edge;
+- Linux: Firefox;
+- MacOs: Chrome;
+- Android: Chrome;
+- OsX: Chrome;
